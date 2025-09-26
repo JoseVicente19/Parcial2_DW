@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h2>LISTADO DE VIDEOS</h2>
+<table border="1">
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Categoria</th>
+                    <th>Descricpion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for video in lista_videos %}
+                <tr>
+                    <td>{{ video.titulo }}</td>
+                    <td>{{ video.categoria }}</td>
+                    <td>{{ video.descripcion }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</table>
+
+<h2>CREAR VIDEO ACA</h2>
+<a href="{% url 'videos:crear' %}">CREAR</a>
+{% endblock %}

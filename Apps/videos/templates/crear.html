@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+<h1>Crear Video</h1>
+    <form method="post">
+        {% csrf_token %}
+        Titulo {{ form.titulo }}
+        Categoria {{ form.categoria }}
+        Descricpion {{ form.descripcion }}
+        <input type="submit" name="GUARDAR">
+    </form>
+
+    <a href="{% url 'videos:videosapp' %}">VER LISTA DE ESTUDIANTES</a>
+
+    
+{% endblock %}

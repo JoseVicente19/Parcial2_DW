@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h2>LISTADO DE USUARIOS</h2>
+<table border="1">
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in lista_usuarios %}
+                <tr>
+                    <td>{{ usuario.nombre }}</td>
+                    <td>{{ usuario.apellido }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</table>
+
+<h2>CREAR CLIENTE ACA</h2>
+<a href="{% url 'usuarios:crearu' %}">CREAR</a>
+{% endblock %}

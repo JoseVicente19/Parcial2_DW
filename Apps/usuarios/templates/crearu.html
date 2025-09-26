@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+<h1>Crear Usuario</h1>
+    <form method="post">
+        {% csrf_token %}
+        Nombre {{ form.nombre }}
+        Apellido {{ form.apellido }}
+        <input type="submit" name="GUARDAR">
+    </form>
+
+    <a href="{% url 'usuarios:usuariosapp' %}">VER LISTA DE USUARIOS</a>
+
+    
+{% endblock %}
